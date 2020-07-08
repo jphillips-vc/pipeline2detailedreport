@@ -28,7 +28,10 @@ def getJSONdata():
 			vcid=i['VCId']
 			displaytext=i['DisplayText']
 			path=i['Files']['SourceFile']['File']
-			src_file = path.split('/')
+			if "/" in path:
+				src_file = path.split('/')
+			elif "\\" in path:
+				src_file = path.split('\\')
 			src_file_len = len(src_file)
 			file=''.join(src_file[src_file_len-1:])
 			line=i['Files']['SourceFile']['Line']
