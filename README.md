@@ -1,7 +1,8 @@
 # pipeline2detailedreport
-Place detailedreport.py in your pipeline output folder where your results.json file resides.
 
 <b>STEPS</b>
+
+	- Place detailedreport.py in your pipeline output folder where your results.json file resides.
 	
 	- Run python detailedreport.py
 
