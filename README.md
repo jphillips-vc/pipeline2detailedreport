@@ -2,6 +2,7 @@
 Place detailedreport.py in your pipeline output folder where your results.json file resides.
 
 <b>STEPS</b>
+	
 	- Run python detailedreport.py
 
 	- A new file will be created called detailed_report.xml
