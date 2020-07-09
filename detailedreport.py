@@ -27,13 +27,14 @@ def getJSONdata():
 			cweid=i['CWEId']
 			vcid=i['VCId']
 			displaytext=i['DisplayText']
-			path=i['Files']['SourceFile']['File']
-			if "/" in path:
-				src_file = path.split('/')
-			elif "\\" in path:
-				src_file = path.split('\\')
+			src=i['Files']['SourceFile']['File']
+			if "/" in src:
+				src_file = src.split('/')
+			elif "\\" in src:
+				src_file = src.split('\\')
 			src_file_len = len(src_file)
 			file=''.join(src_file[src_file_len-1:])
+			path=src.replace(file, '')
 			line=i['Files']['SourceFile']['Line']
 			qualifiedfunctionname=i['Files']['SourceFile']['QualifiedFunctionName']
 			functionprototype=i['Files']['SourceFile']['FunctionPrototype']
