@@ -26,7 +26,6 @@ def getJSONdata():
 				severity=i['Severity']
 				issuetype=i['IssueType']
 				cweid=i['CWEId']
-				vcid=i['VCId']
 				displaytext=i['DisplayText']
 				src=i['Files']['SourceFile']['File']
 				if "/" in src:
@@ -45,29 +44,29 @@ def getJSONdata():
 				qualifiedfunctionname=i['Files']['SourceFile']['QualifiedFunctionName']
 				functionprototype=i['Files']['SourceFile']['FunctionPrototype']
 				scope=i['Files']['SourceFile']['Scope']
-				flaws[count]={'title' : title, 'issueid' : issueid, 'severity' : severity, 'issuetype' : issuetype, 'cweid' : cweid, 'vcid' : vcid, 'displaytext' : displaytext, 'file' : file, 'path' : path, 'line' : line, 'qualifiedfunctionname' : qualifiedfunctionname, 'functionprototype' : functionprototype, 'scope' : scope}
+				flaws[count]={'title' : title, 'issueid' : issueid, 'severity' : severity, 'issuetype' : issuetype, 'cweid' : cweid, 'displaytext' : displaytext, 'file' : file, 'path' : path, 'line' : line, 'qualifiedfunctionname' : qualifiedfunctionname, 'functionprototype' : functionprototype, 'scope' : scope}
 				count=count+1
 			#
 			# Place flaws in dictonary by severity
 			#
 			for x in flaws:
 				if flaws[x]['severity'] == '5':
-					five[x]={'title' : flaws[x]['title'], 'issueid' : flaws[x]['issueid'], 'severity' : flaws[x]['severity'], 'issuetype' : flaws[x]['issuetype'], 'cweid' : flaws[x]['cweid'], 'vcid' : flaws[x]['vcid'], 'displaytext' : flaws[x]['displaytext'], 'file' : flaws[x]['file'], 'path' : flaws[x]['path'], 'line' : flaws[x]['line'], 'qualifiedfunctionname' : flaws[x]['qualifiedfunctionname'], 'functionprototype' : flaws[x]['functionprototype'], 'scope' : flaws[x]['scope']}
+					five[x]={'title' : flaws[x]['title'], 'issueid' : flaws[x]['issueid'], 'severity' : flaws[x]['severity'], 'issuetype' : flaws[x]['issuetype'], 'cweid' : flaws[x]['cweid'], 'displaytext' : flaws[x]['displaytext'], 'file' : flaws[x]['file'], 'path' : flaws[x]['path'], 'line' : flaws[x]['line'], 'qualifiedfunctionname' : flaws[x]['qualifiedfunctionname'], 'functionprototype' : flaws[x]['functionprototype'], 'scope' : flaws[x]['scope']}
 				
 				if flaws[x]['severity'] == '4':
-					four[x]={'title' : flaws[x]['title'], 'issueid' : flaws[x]['issueid'], 'severity' : flaws[x]['severity'], 'issuetype' : flaws[x]['issuetype'], 'cweid' : flaws[x]['cweid'], 'vcid' : flaws[x]['vcid'], 'displaytext' : flaws[x]['displaytext'], 'file' : flaws[x]['file'], 'path' : flaws[x]['path'], 'line' : flaws[x]['line'], 'qualifiedfunctionname' : flaws[x]['qualifiedfunctionname'], 'functionprototype' : flaws[x]['functionprototype'], 'scope' : flaws[x]['scope']}
+					four[x]={'title' : flaws[x]['title'], 'issueid' : flaws[x]['issueid'], 'severity' : flaws[x]['severity'], 'issuetype' : flaws[x]['issuetype'], 'cweid' : flaws[x]['cweid'], 'displaytext' : flaws[x]['displaytext'], 'file' : flaws[x]['file'], 'path' : flaws[x]['path'], 'line' : flaws[x]['line'], 'qualifiedfunctionname' : flaws[x]['qualifiedfunctionname'], 'functionprototype' : flaws[x]['functionprototype'], 'scope' : flaws[x]['scope']}
 				
 				if flaws[x]['severity'] == '3':
-					three[x]={'title' : flaws[x]['title'], 'issueid' : flaws[x]['issueid'], 'severity' : flaws[x]['severity'], 'issuetype' : flaws[x]['issuetype'], 'cweid' : flaws[x]['cweid'], 'vcid' : flaws[x]['vcid'], 'displaytext' : flaws[x]['displaytext'], 'file' : flaws[x]['file'], 'path' : flaws[x]['path'], 'line' : flaws[x]['line'], 'qualifiedfunctionname' : flaws[x]['qualifiedfunctionname'], 'functionprototype' : flaws[x]['functionprototype'], 'scope' : flaws[x]['scope']}
+					three[x]={'title' : flaws[x]['title'], 'issueid' : flaws[x]['issueid'], 'severity' : flaws[x]['severity'], 'issuetype' : flaws[x]['issuetype'], 'cweid' : flaws[x]['cweid'], 'displaytext' : flaws[x]['displaytext'], 'file' : flaws[x]['file'], 'path' : flaws[x]['path'], 'line' : flaws[x]['line'], 'qualifiedfunctionname' : flaws[x]['qualifiedfunctionname'], 'functionprototype' : flaws[x]['functionprototype'], 'scope' : flaws[x]['scope']}
 				
 				if flaws[x]['severity'] == '2':
-					two[x]={'title' : flaws[x]['title'], 'issueid' : flaws[x]['issueid'], 'severity' : flaws[x]['severity'], 'issuetype' : flaws[x]['issuetype'], 'cweid' : flaws[x]['cweid'], 'vcid' : flaws[x]['vcid'], 'displaytext' : flaws[x]['displaytext'], 'file' : flaws[x]['file'], 'path' : flaws[x]['path'], 'line' : flaws[x]['line'], 'qualifiedfunctionname' : flaws[x]['qualifiedfunctionname'], 'functionprototype' : flaws[x]['functionprototype'], 'scope' : flaws[x]['scope']}
+					two[x]={'title' : flaws[x]['title'], 'issueid' : flaws[x]['issueid'], 'severity' : flaws[x]['severity'], 'issuetype' : flaws[x]['issuetype'], 'cweid' : flaws[x]['cweid'], 'displaytext' : flaws[x]['displaytext'], 'file' : flaws[x]['file'], 'path' : flaws[x]['path'], 'line' : flaws[x]['line'], 'qualifiedfunctionname' : flaws[x]['qualifiedfunctionname'], 'functionprototype' : flaws[x]['functionprototype'], 'scope' : flaws[x]['scope']}
 				
 				if flaws[x]['severity'] == '1':
-					one[x]={'title' : flaws[x]['title'], 'issueid' : flaws[x]['issueid'], 'severity' : flaws[x]['severity'], 'issuetype' : flaws[x]['issuetype'], 'cweid' : flaws[x]['cweid'], 'vcid' : flaws[x]['vcid'], 'displaytext' : flaws[x]['displaytext'], 'file' : flaws[x]['file'], 'path' : flaws[x]['path'], 'line' : flaws[x]['line'], 'qualifiedfunctionname' : flaws[x]['qualifiedfunctionname'], 'functionprototype' : flaws[x]['functionprototype'], 'scope' : flaws[x]['scope']}
+					one[x]={'title' : flaws[x]['title'], 'issueid' : flaws[x]['issueid'], 'severity' : flaws[x]['severity'], 'issuetype' : flaws[x]['issuetype'], 'cweid' : flaws[x]['cweid'], 'displaytext' : flaws[x]['displaytext'], 'file' : flaws[x]['file'], 'path' : flaws[x]['path'], 'line' : flaws[x]['line'], 'qualifiedfunctionname' : flaws[x]['qualifiedfunctionname'], 'functionprototype' : flaws[x]['functionprototype'], 'scope' : flaws[x]['scope']}
 				
 				if flaws[x]['severity'] == '0':
-					zero[x]={'title' : flaws[x]['title'], 'issueid' : flaws[x]['issueid'], 'severity' : flaws[x]['severity'], 'issuetype' : flaws[x]['issuetype'], 'cweid' : flaws[x]['cweid'], 'vcid' : flaws[x]['vcid'], 'displaytext' : flaws[x]['displaytext'], 'file' : flaws[x]['file'], 'path' : flaws[x]['path'], 'line' : flaws[x]['line'], 'qualifiedfunctionname' : flaws[x]['qualifiedfunctionname'], 'functionprototype' : flaws[x]['functionprototype'], 'scope' : flaws[x]['scope']}
+					zero[x]={'title' : flaws[x]['title'], 'issueid' : flaws[x]['issueid'], 'severity' : flaws[x]['severity'], 'issuetype' : flaws[x]['issuetype'], 'cweid' : flaws[x]['cweid'], 'displaytext' : flaws[x]['displaytext'], 'file' : flaws[x]['file'], 'path' : flaws[x]['path'], 'line' : flaws[x]['line'], 'qualifiedfunctionname' : flaws[x]['qualifiedfunctionname'], 'functionprototype' : flaws[x]['functionprototype'], 'scope' : flaws[x]['scope']}
 		else:
 			quit()
 
