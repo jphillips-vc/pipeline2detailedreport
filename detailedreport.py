@@ -20,14 +20,14 @@ def getJSONdata():
 		# Capturing Data from JSON results file and saving to dictionary
 		#
 		if data['scan_status'] == "SUCCESS":
-			for i in data['results']['TestResults']['Issues']['Issue']:
-				title=i['Title']
-				issueid=i['IssueId']
-				severity=i['Severity']
-				issuetype=i['IssueType']
-				cweid=i['CWEId']
-				displaytext=i['DisplayText']
-				src=i['Files']['SourceFile']['File']
+			for i in data['findings']:
+				title=i['title']
+				issueid=str(i['issue_id'])
+				severity=str(i['severity'])
+				issuetype=i['issue_type']
+				cweid=i['cwe_id']
+				displaytext=i['display_text']
+				src=i['files']['source_file']['file']
 				if "/" in src:
 					src_file = src.split('/')
 					src_file_len = len(src_file)
@@ -40,10 +40,10 @@ def getJSONdata():
 					src_file = src
 					file = src_file
 				path=src.replace(file, '')
-				line=i['Files']['SourceFile']['Line']
-				qualifiedfunctionname=i['Files']['SourceFile']['QualifiedFunctionName']
-				functionprototype=i['Files']['SourceFile']['FunctionPrototype']
-				scope=i['Files']['SourceFile']['Scope']
+				line=str(i['files']['source_file']['line'])
+				qualifiedfunctionname=i['files']['source_file']['qualified_function_name']
+				functionprototype=i['files']['source_file']['function_prototype']
+				scope=i['files']['source_file']['scope']
 				flaws[count]={'title' : title, 'issueid' : issueid, 'severity' : severity, 'issuetype' : issuetype, 'cweid' : cweid, 'displaytext' : displaytext, 'file' : file, 'path' : path, 'line' : line, 'qualifiedfunctionname' : qualifiedfunctionname, 'functionprototype' : functionprototype, 'scope' : scope}
 				count=count+1
 			#
