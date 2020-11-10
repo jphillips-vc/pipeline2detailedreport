@@ -1,9 +1,9 @@
 # pipeline2detailedreport
-<b>- USAGE: python detailedrerport.py [--html] [-f filename.json]</b>
+<b>USAGE:  python detailedrerport.py [--html] [-f filename.json]</b>
 		
-<b>--html will generate a local html report from the json file</b>
+--html will generate a local html report from the json file
 		
-<b>-f will allow you to pass a custom named json file from a completed pipeline scan</b>
+-f will allow you to pass a custom named json file from a completed pipeline scan
 
 Note: The default behavior will not create an html report and uses the standard results.json generated file
 
