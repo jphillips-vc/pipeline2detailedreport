@@ -1,7 +1,4 @@
 # pipeline2detailedreport
-
-<b>STEPS</b>
-	
 <b>- USAGE: python detailedrerport.py [--html] [-f filename.json]</b>
 		
 <b>--html will generate a local html report from the json file</b>
@@ -9,7 +6,9 @@
 <b>-f will allow you to pass a custom named json file from a completed pipeline scan</b>
 
 Note: The default behavior will not create an html report and uses the standard results.json generated file
-	
+
+
+<b>STEPS</b>
 	
 	- Place detailedreport.py in your pipeline output folder where your results.json file resides.
 	
