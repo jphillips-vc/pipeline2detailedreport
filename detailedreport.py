@@ -20,7 +20,7 @@ parser.add_argument('--html', dest='html', action='store_true', help="Creates HT
 parser.add_argument('--no-html', dest='html', action='store_false', help="Default option prints no html report")
 parser.set_defaults(html=False)
 args = parser.parse_args()
-htmlreport = args.html #parser.parse_args('html')
+htmlreport = args.html
 jsonfile = str(args.f)
 if str(jsonfile) == "None":
 	jsonfile = 'results.json'
@@ -551,7 +551,8 @@ def main():
 	#
 	# Write HTML report
 	#
-	writeHTML()
+	if htmlreport is True:
+		writeHTML()
 	#
 	# Generate XML
 	#
